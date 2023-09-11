@@ -10,6 +10,8 @@ void afficher(int result){
   print(result);
 }
 
+int addAndIncrementPasAnonyme(int a, int b) => increment(add(a, b));
+
 void main(){
   //Les fonctions lambda 
   ecrire(add);
@@ -31,7 +33,7 @@ void main(){
   final result2 = nombres.map(increment).toList();
   print(result2);
 
-  final int Function(int a, int b) addAndIncrement = (int a, int b) => increment(add(a,b));
-  print(addAndIncrement(1,2));
-  
+  final int Function(int a, int b) addAndIncrement = (int a, int b) => increment(add(a, b));
+  print(addAndIncrement(1, 2));
+  print(addAndIncrementPasAnonyme(1, 2));
 }
